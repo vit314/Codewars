@@ -1,8 +1,10 @@
+import java.util.ArrayList;
+
 public class Codewars_1 {
     public static void main(String[] args) {
 
 //        System.out.println(sortDescSecond(635241));
-        System.out.println(revString("olleh"));
+        System.out.println(countSheeps(array1));
     }
 
 
@@ -74,9 +76,92 @@ public class Codewars_1 {
         return new StringBuilder(str).reverse().toString();
     }
 
+    //We need a function that counts the number of sheep present in the array (true means present).
 
+    static Boolean[] array1 = {true, true, true, false,
+            true, true, true, true,
+            true, false, true, false,
+            true, false, false, true,
+            true, true, true, true,
+            false, false, true, true};
 
+    public static int countSheeps(Boolean[] arrayOfSheeps) {
+        int count = 0;
+        for (int i = 0; i < arrayOfSheeps.length; i++) {
+            if (arrayOfSheeps[i] != false && arrayOfSheeps[i] != null)
+                count++;
+        }
+        return count;
+    }
 
+    public static int countSheeps2(Boolean[] arrayOfSheeps) {
+        int count = 0;
+        for (Boolean value : arrayOfSheeps) {
+            if (value.booleanValue()) {
+                count++;
+            }
+        }
+        return count;
+    }
+
+    public static int countPassengers(ArrayList<int[]> stops) {
+        //Code h
+        int getIn = 0;
+        int getOff = 0;
+        for (int[] stop : stops) {
+            getIn += stop[0];
+            getOff += stop[1];
+        }
+        return getIn - getOff;
+    }
+
+    //string repeat
+    public static String repeatStr(final int repeat, final String string) {
+        String rep = "";
+        for (int i = 0; i <= repeat; i++) {
+            rep += string;
+        }
+        return rep;
+    }
+
+    //This kata is about multiplying a given number by eight if it is an even number and by nine otherwise.
+    public static int simpleMultiplication(int n) {
+        if (n % 2 == 0) {
+            n *= 8;
+        } else {
+            n *= 9
+            ;
+        }
+        return n;
+    }
+
+    //Square(n) Sum
+    public static int squareSum(int[] n) {
+        int sum = 0;
+        for (int i = 0; i < n.length; i++) {
+            sum += n[i] * n[i];
+        }
+        return sum;
+    }
+
+    //Return Negative
+    public static int makeNegative(final int x) {
+        int neg = 0;
+        if (x > 0) {
+            neg = -x;
+        } else {
+            neg = x;
+        }
+        return neg; // Your code here.
+    }
+
+    //Returning Strings
+    public static String greet(String name) {
+        return "Hello, " + name + " how are you doing today?";
+
+    }
+
+    //https://www.codewars.com/kata/5601409514fc93442500010b/java
 
 }
 
