@@ -7,21 +7,23 @@ public class Codewars_1 {
     public static void main(String[] args) {
 
 //        System.out.println(sortDescSecond(635241));
-        System.out.println(Arrays.toString(reverse(5)));
+//        System.out.println(Arrays.toString(reverse(5)));
+        String str = null;
+        System.out.println(str);
     }
 
 //    Write a method that takes an array of characters and reverses the letters in place.
 
-        static String reverse(String str){
-            int n = str.length();
+    static String reverse(String str) {
+        int n = str.length();
 
-            char[] temp = new char[n];
-            for (int i = 0; i < n; i++) {
-                temp[n - i - 1] = str.charAt(i);
+        char[] temp = new char[n];
+        for (int i = 0; i < n; i++) {
+            temp[n - i - 1] = str.charAt(i);
 
-            }
-            return String.copyValueOf(temp);
         }
+        return String.copyValueOf(temp);
+    }
 
     //
 //    public static String stringToNumber(String str) {
@@ -395,13 +397,63 @@ public class Codewars_1 {
     //Reversed sequence
     //https://www.codewars.com/kata/5a00e05cc374cb34d100000d/train/java
 
-    public static int[] reverse(int n){
+    public static int[] reverse(int n) {
         int[] res = new int[n];
         for (int i = 0; i < n; i++) {
-           res[i] = n - i;
+            res[i] = n - i;
         }
         return res;
     }
+
+    //Third Angle of a Triangle
+    //https://www.codewars.com/kata/5a023c426975981341000014/train/java
+    public static int otherAngle(int angle1, int angle2) {
+
+        return 180 - angle1 - angle2;
+    }
+
+    //Sum Arrays
+    //https://www.codewars.com/kata/53dc54212259ed3d4f00071c/train/java
+    public static double sum(double[] numbers) {
+        double sum = 0.0;
+        for (int i = 0; i < numbers.length; i++) {
+            sum += numbers[i];
+        }
+
+        return sum;
+    }
+
+    //Parse nice int from char problem
+    //https://www.codewars.com/kata/557cd6882bfa3c8a9f0000c1/train/java
+
+    public static int howOld(final String herOld) {
+        String res = String.valueOf(herOld.charAt(0));
+
+        return Integer.parseInt(res);
+    }
+
+    //Grasshopper - Grade book
+    //https://www.codewars.com/kata/55cbd4ba903825f7970000f5/train/java
+    public static char getGrade(int s1, int s2, int s3) {
+        int score = (s1 + s2 + s3) / 3;
+        char res = 0;
+        if (90 <= score && score <= 100) {
+            res = 'A';
+        } else if (80 <= score && score < 90) {
+            res = 'B';
+        } else if (70 <= score && score < 80) {
+            res = 'C';
+        } else if (60 <= score && score < 70) {
+            res = 'D';
+        } else if (0 <= score && score < 60) {
+            res = 'F';
+        }
+
+        return res;
+    }
+
+
+
 
 
 
