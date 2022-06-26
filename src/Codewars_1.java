@@ -8,8 +8,7 @@ public class Codewars_1 {
 
 //        System.out.println(sortDescSecond(635241));
 //        System.out.println(Arrays.toString(reverse(5)));
-        String str = null;
-        System.out.println(str);
+        System.out.println(opposite(-4));
     }
 
 //    Write a method that takes an array of characters and reverses the letters in place.
@@ -452,9 +451,169 @@ public class Codewars_1 {
         return res;
     }
 
+    public static String reverString(String s) {
+        int n = s.length();
+        char[] temp = new char[n];
+        for (int i = 0; i < n; i++) {
+            temp[n - i - 1] = s.charAt(i);
+        }
+        return String.copyValueOf(temp);
+    }
+
+    //Find the first non-consecutive number
+    //https://www.codewars.com/kata/58f8a3a27a5c28d92e000144/train/java
+
+    static Integer find(final int[] array) {
+        for (int i = 0; i < array.length - 1; i++) {
+            if (array[i + 1] - array[i] != 1) {
+                return array[i + 1];
+            }
+        }
+        return null;
+    }
+
+    //Quarter of the year
+    //https://www.codewars.com/kata/5ce9c1000bab0b001134f5af/train/java
+
+    public static int quarterOf(int month) {
+        if (month <= 3) {
+            return 1;
+        } else if (month <= 6) {
+            return 2;
+        } else if (month <= 9) {
+            return 3;
+        } else
+            return 4;
+    }
 
 
+    //Are they the "same"?
+    //https://www.codewars.com/kata/550498447451fbbd7600041c/train/java
 
+    public static boolean comp(int[] a, int[] b) {
+
+        for (int i = 0; i < a.length; i++) {
+            for (int j = 0; j < b.length; j++) {
+
+                if (a[i] * a[i] == b[j]) {
+                    return true;
+                }
+            }
+        }
+        return false;
+    }
+
+//    FIXME: Replace all dots
+    //https://www.codewars.com/kata/596c6eb85b0f515834000049/train/java
+
+    public static String replaceDots(final String str) {
+        return str.replaceAll(".", "-");
+    }
+
+    //Remove exclamation marks
+    //https://www.codewars.com/kata/57a0885cbb9944e24c00008e/train/java
+
+    static String removeExclamationMarks(String s) {
+        return s.replaceAll("\\!", "");
+    }
+
+    //Remove String Spaces
+    //https://www.codewars.com/kata/57eae20f5500ad98e50002c5/train/java
+    public static String noSpace(final String x) {
+        return x.replaceAll(" ", "");
+    }
+
+
+    //Grasshopper - Summation
+//https://www.codewars.com/kata/55d24f55d7dd296eb9000030/train/java
+
+    public static int summation(int n) {
+        int sum = 0;
+        for (int i = 1; i <= n; i++) {
+            sum += i;
+        }
+        return sum;
+    }
+
+    //Growth of a Population
+    //https://www.codewars.com/kata/563b662a59afc2b5120000c6/train/java
+
+    public static int nbYear(int p0, double percent, int aug, int p) {
+        int years = 0;
+        while (p0 < p) {
+            p0 = p0 + (int) (p0 * percent / 100) + aug;
+            years++;
+        }
+
+        return years;
+    }
+
+    //Rock Paper Scissors!
+    //https://www.codewars.com/kata/5672a98bdbdd995fad00000f/train/java
+    public static String rps(String p1, String p2) {
+        String sc = "scissors";
+        String pa = "paper";
+        String ro = "rock";
+        String p1Won = "Player 1 won!";
+        String p2Won = "Player 2 won!";
+        String draw = "Draw!";
+
+        if (p1 == sc && p2 == pa) {
+            return p1Won;
+        } else if (p1 == pa && p2 == ro) {
+            return p1Won;
+        } else if (p1 == ro && p2 == sc) {
+            return p1Won;
+        } else if (p1 == ro && p2 == ro) {
+            return draw;
+        } else if (p1 == pa && p2 == pa) {
+            return draw;
+        } else if (p1 == sc && p2 == sc) {
+            return draw;
+        } else
+            return p2Won;
+    }
+
+    //Opposite number
+    //https://www.codewars.com/kata/56dec885c54a926dcd001095/train/java
+    public static int opposite(int number) {
+        return -number;
+    }
+
+//Invert values
+    //https://www.codewars.com/kata/5899dc03bc95b1bf1b0000ad/java
+
+    public static int[] invert(int[] array) {
+        int[] res = new int[array.length];
+        for (int i = 0; i < array.length; i++) {
+            res[i] += -array[i];
+        }
+
+        return res;
+    }
+
+    //Reverse words
+    //https://www.codewars.com/kata/5259b20d6021e9e14c0010d4/train/java
+
+    //Thinkful - Logic Drills: Traffic light
+    //https://www.codewars.com/kata/58649884a1659ed6cb000072/train/java
+
+    public static String updateLight(String current) {
+        String r = "red";
+        String y = "yellow";
+        String g = "green";
+        if (current == r ) {
+            return g;
+        } else if (current == y) {
+            return r;
+        } else
+            return y;
+    }
 
 
 }
+
+
+
+
+
