@@ -1,14 +1,12 @@
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.List;
-import java.util.Set;
 
 public class Codewars_1 {
     public static void main(String[] args) {
 
 //        System.out.println(sortDescSecond(635241));
 //        System.out.println(Arrays.toString(reverse(5)));
-        System.out.println(opposite(-4));
+        System.out.println(digitize(12345));
     }
 
 //    Write a method that takes an array of characters and reverses the letters in place.
@@ -610,6 +608,18 @@ public class Codewars_1 {
             return y;
     }
 
+    //Convert number to reversed array of digits
+    //https://www.codewars.com/kata/5583090cbe83f4fd8c000051/train/java
+
+    public static int[] digitize(long n) {
+        String str = String.valueOf(n);
+        int strLen = str.length();
+        int[] result = new int[strLen];
+        for (int i = 0; i < strLen; i++) {
+            result[i] = (int) (str.charAt(strLen - i - 1)) - 48;
+        }
+        return result;
+    }
 
 }
 
