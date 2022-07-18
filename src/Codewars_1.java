@@ -1,12 +1,19 @@
+import javax.swing.*;
 import java.util.ArrayList;
 import java.util.List;
 
 public class Codewars_1 {
-    public static void main(String[] args) {
+    public static void main(String[] obed) {
 
 //        System.out.println(sortDescSecond(635241));
 //        System.out.println(Arrays.toString(reverse(5)));
-        System.out.println(digitize(12345));
+//        System.out.println(camelCase("camelCasing"));
+
+        int a = 3;
+        double k = 4.6;
+        double c = a + k;
+        System.out.println(c);
+
     }
 
 //    Write a method that takes an array of characters and reverses the letters in place.
@@ -600,7 +607,7 @@ public class Codewars_1 {
         String r = "red";
         String y = "yellow";
         String g = "green";
-        if (current == r ) {
+        if (current == r) {
             return g;
         } else if (current == y) {
             return r;
@@ -621,7 +628,90 @@ public class Codewars_1 {
         return result;
     }
 
+    //Cat years, Dog years
+    //https://www.codewars.com/kata/5a6663e9fd56cb5ab800008b/train/java
+
+    public static int[] humanYearsCatYearsDogYears(final int humanYears) {
+
+        int[] res = new int[3];
+        res[0] = humanYears;
+        int catYears;
+        int dogYears;
+
+        if (humanYears == 1) {
+            catYears = 15;
+        } else if (humanYears == 2) {
+            catYears = 15 + 9;
+        } else {
+            catYears = 24 + (humanYears - 2) * 4;
+        }
+
+        if (humanYears == 1) {
+            dogYears = 15;
+        } else if (humanYears == 2) {
+            dogYears = 15 + 9;
+        } else {
+            dogYears = 24 + (humanYears - 2) * 5;
+        }
+
+        res[1] = catYears;
+        res[2] = dogYears;
+
+        return res;
+    }
+
+    //Regex validate PIN code
+    //https://www.codewars.com/kata/55f8a9c06c018a0d6e000132/java
+
+    public static boolean validatePin(String pin) {
+        if (pin.length() == 4 || pin.length() == 6) {
+            for (char c : pin.toCharArray()) {
+                if (!Character.isDigit(c)) return false;
+            }
+            return true;
+        } else {
+            return false;
+        }
+    }
+
+    //Break camelCase
+    //https://www.codewars.com/kata/5208f99aee097e6552000148/train/java
+
+    public static String camelCase(String input) {
+        String res = "";
+        for (int i = 0; i < input.length(); i++) {
+            String c = Character.toString(input.charAt(i));
+            if (c.equals(c.toUpperCase())) {
+                res += " ";
+            }
+            res += c;
+        }
+        return res;
+    }
+
+    //Will there be enough space?
+    //https://www.codewars.com/kata/5875b200d520904a04000003/train/java
+
+    public static int enough(int cap, int on, int wait) {
+        // your code here
+        int num = ((on + wait) - cap);
+        if (num <= 0) {
+            return 0;
+        } else {
+            return num;
+        }
+
+        //Convert boolean values to strings 'Yes' or 'No'.
+        //https://www.codewars.com/kata/53369039d7ab3ac506000467/train/java
+
+
+    }
 }
+
+
+
+
+
 
 
 
